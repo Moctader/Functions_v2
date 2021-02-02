@@ -50,7 +50,15 @@ function calculateCircleArea (r) {
 
 
 // Button functions
-function f01() {           
+function f01() {
+    let radius1 = Number(document.getElementById("radius1").value);   
+    
+
+    let c_area = (Math.PI) * (Math.pow(radius1,2))
+    let c_around =(Math.round(radius1));
+
+    document.getElementById("c_around").innerHTML= c_around
+    document.getElementById("c_area").innerHTML= c_area;
 
 }
 
