@@ -31,7 +31,7 @@ function print(place, shape, area, around) {
  * @returns {number}    around of a circle
  */
 function calculateCircleAround (r) {
-    
+    return 2 * Math.PI * r;
 }
 
 /**
@@ -40,15 +40,21 @@ function calculateCircleAround (r) {
  * @returns {number}    area of a circle 
  */
 function calculateCircleArea (r) {
-    let area = (Math.PI) * (Math.pow(radius2,2)); 
+    return  Math.PI * Math.pow(r,2)
 
     
 }
 
 // Write Square functions here
+function calculateSquareAround (s) {
+    return s * s
 
+}
 
 // Paste here the random number generator function 
+function getRndInteger (min, max) {
+    return Math.floor(math.random() * (max - min + 1)) + min;
+}
 
 
 // Button functions
@@ -56,7 +62,7 @@ function f01() {
     let radius1 = Number(document.getElementById("radius1").value);   
     
 
-    let c_area = (Math.PI) * (Math.pow(radius1,2))
+    let c_area = (Math.PI) * (Math.pow(radius1, 2))
     let c_around =2 * (Math.PI) * radius1;
 
     document.getElementById("c_around").innerHTML= (Math.round(c_around));
@@ -65,7 +71,16 @@ function f01() {
 }
 
 function f02() {
+    let side = Number(document.getElementById("side").value);
+    let bottom = Number(document.getElementById("bottom").value);
+    let half_bottom = bottom /2;
+    let height = Math.sqrt((Math.pow(side, 2)) - (Math.pow(half_bottom, 2)));
+    let area = 2 * ((half_bottom * height)/2);
+    let around = side + side + bottom;
 
+    document.getElementById("t_height").innerHTML = Math.round(height);
+    document.getElementById("t_around").innerHTML =around;
+    document.getElementById("t_area").innerHTML = Math.round(area);
 
 
 
@@ -78,14 +93,12 @@ function f03() {
 //    let p = document.getElementById('circle');
 //    print(p, ...);    
 
-let radius2 = Number(document.getElementById("radius2").value); 
-console.log(radius2);
-let area = (Math.PI) * (Math.pow(radius2,2)); 
-let around = 2*Math.PI* radius2;
-let place = document.getElementById("circle");
-let shape = document.getElementById("")
+let radius = Number(document.getElementById("radius2").value); 
+let area = calculateCircleArea(radius);
+let around = calculateCircleAround(radius);
+let p = document.getElementById("circle");
+print(p, "Circle:", (Math.round(area)), (Math.round(around)));
 
-print (place, area, around)
 
 
 
