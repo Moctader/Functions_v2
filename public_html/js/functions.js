@@ -64,6 +64,10 @@ function f01() {
 
 function f02() {
 
+
+
+
+
 }
 
 function f03() {
@@ -71,6 +75,18 @@ function f03() {
 //    how to find the element where to print and use it    
 //    let p = document.getElementById('circle');
 //    print(p, ...);    
+
+let radius2 = Number(document.getElementById("radius2").value); 
+let area = (Math.PI) * (Math.pow(radius2,2))    
+let circumference =2*Math.PI*radius2
+
+
+document.getElementById("circle").innerHTML=area
+document.getElementById("circle").innerHTML=circumference
+return calculateCircleArea (area);
+
+
+
 }
 
 function f04() {
