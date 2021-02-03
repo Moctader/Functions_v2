@@ -40,6 +40,8 @@ function calculateCircleAround (r) {
  * @returns {number}    area of a circle 
  */
 function calculateCircleArea (r) {
+    let area = (Math.PI) * (Math.pow(radius2,2)); 
+
     
 }
 
@@ -55,10 +57,10 @@ function f01() {
     
 
     let c_area = (Math.PI) * (Math.pow(radius1,2))
-    let c_around =(Math.round(radius1));
+    let c_around =2 * (Math.PI) * radius1;
 
-    document.getElementById("c_around").innerHTML= c_around
-    document.getElementById("c_area").innerHTML= c_area;
+    document.getElementById("c_around").innerHTML= (Math.round(c_around));
+    document.getElementById("c_area").innerHTML= (Math.round(c_area));
 
 }
 
@@ -77,13 +79,13 @@ function f03() {
 //    print(p, ...);    
 
 let radius2 = Number(document.getElementById("radius2").value); 
-let area = (Math.PI) * (Math.pow(radius2,2))    
-let circumference =2*Math.PI*radius2
+console.log(radius2);
+let area = (Math.PI) * (Math.pow(radius2,2)); 
+let around = 2*Math.PI* radius2;
+let place = document.getElementById("circle");
+let shape = document.getElementById("")
 
-
-document.getElementById("circle").innerHTML=area
-document.getElementById("circle").innerHTML=circumference
-return calculateCircleArea (area);
+print (place, area, around)
 
 
 
@@ -97,8 +99,9 @@ function f05() {
 
 }
 
-function f06() {
-
+function f06(min, max) {
+    document.getElementById("dice").innerHTML =
+    Math.floor(Math.random() * 6) + 1;
 }
 
 function f07() {
